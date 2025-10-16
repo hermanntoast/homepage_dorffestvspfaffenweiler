@@ -32,7 +32,10 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --base-href /homepage_dorffestvspfaffenweiler/
+        run: npm run build -- --base-href /
+
+      - name: Create CNAME file
+        run: echo "dorffest-vs-pfaffenweiler.de" > ./dist/dorffest-vs-pfaffenweiler/browser/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
